@@ -31,7 +31,7 @@ test("CPI working as expected", async () => {
    let transaction = new Transaction().add(ix);
    transaction.recentBlockhash = blockhash;
    transaction.feePayer = userAccount.publicKey;
-   transaction.sign(userAccount);
+   transaction.sign(userAccount, dataAccount);
 
    const res = svm.sendTransaction(transaction);
    console.log(res);
